@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirm Deletion
+{% endblock %}
+
+{% block content %}
+    <h3>Are you sure you want to delete the student?</h3>
+    <div>
+        <p><strong>Name:</strong> {{ child.name }}</p>
+        <p><strong>NIC:</strong> {{ child.nic }}</p>
+        <p><strong>Resident:</strong> {{ child.resident }}</p>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" style="background-color: red; color: white;">Yes, Delete</button>
+        <a href="{% url 'child' nic=child.nic %}" class="gradient-link-btn">No, Cancel</a>
+    </form>
+{% endblock %}

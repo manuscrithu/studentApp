@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{child.name}}
+{% endblock title %}
+
+{% block content %}
+    <div class="student-item">
+        <img src="{{child.banner.url}}" alt="{{child.name}}">
+        
+        <h3>{{child.name}}</h3>
+        <p>{{child.nic}}</p>
+        <p>{{child.resident}}</p>
+    </div>
+    <a href="{% url 'update' pk=child.pk %}" title="Edit details" class="gradient-link-btn">📝 Edit</a> &nbsp;&nbsp;&nbsp;
+    <a href="{% url 'delete' pk=child.pk %}" title="Delete record" class="gradient-link-btn">🚮 Delete</a>
+{% endblock content %}

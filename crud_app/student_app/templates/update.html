@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit details for {{ child.name }}
+{% endblock title %}
+
+{% block content %}
+    <h3>Edit details for {{ child.name }}</h3>
+
+    <form action="{% url 'update' pk=child.pk %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Renders the form fields as paragraph elements -->
+        <button type="submit">Save changes</button>
+    </form>
+
+    <br>
+    <a href="{% url 'child' nic=child.nic %}" class="gradient-link-btn">Cancel</a>
+{% endblock content %}

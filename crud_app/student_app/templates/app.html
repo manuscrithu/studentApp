@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Student App
+{% endblock title %}
+
+{% block content %}
+    <h1>Student App</h1>
+    <h2>Student list</h2>
+
+    {% for child in children %}
+        <div class="student-item">
+            <h3>
+                <a href="{% url 'child' nic=child.nic%}" title="Click for more actions" class="basic-link-btn">
+                    {{child.name}}
+                </a>
+            </h3>
+            <p>{{child.nic}}</p>
+            <p>{{child.resident}}</p>
+        </div>
+    {% endfor %}
+
+    <a href="{% url 'datain' %}" class="gradient-link-btn">Add student</a> <br><br>
+    <a href="{% url 'search' %}" class="gradient-link-btn">Search student</a> <br><br>
+    <a href="{% url 'logout' %}" class="gradient-link-btn">logout</a>
+{% endblock content %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <nav class="sticky-navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="">About Us</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'app' %}" class="btn btn-primary">Student List</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="btn btn-primary">Student List</a></li>
+            {% endif %}
+            <li><a href="">Contact</a></li>
+            <li><a href="">Subscriptions</a></li>
+            </ul>
+        </nav>
+        {% block content %}{% endblock content %}
+    </main>
+
+</body>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <p>
+                We are a student management app offering seamless solutions for organizing and managing student data.
+            </p>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Subscribe</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@studentapp.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Location: 123 Student St., Education City</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Student App | All Rights Reserved.
+    </div>
+</footer>
+
+
+</html>

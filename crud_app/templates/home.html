@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<header class="hero">
+    <h1>Welcome to Student App</h1>
+    <p>Your one-stop solution for managing student data seamlessly.</p>
+    <a href="#" class="cta-button">Get Started</a>
+</header>
+
+<section class="features">
+    <h2>Features</h2>
+    <div class="features-container">
+        <div class="feature">
+            <i class="icon fas fa-user-graduate"></i>
+            <h3>Student Management</h3>
+            <p>Organize student profiles, records, and grades efficiently.</p>
+        </div>
+        <div class="feature">
+            <i class="icon fas fa-chalkboard-teacher"></i>
+            <h3>Teacher Integration</h3>
+            <p>Connect teachers with their students for better communication.</p>
+        </div>
+        <div class="feature">
+            <i class="icon fas fa-chart-line"></i>
+            <h3>Progress Tracking</h3>
+            <p>Track academic performance with detailed analytics.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to simplify student management?</h2>
+    <a href="{% url 'login' %}" class="cta-button">Sign-In Now</a>
+</section>
+
+{% endblock content %}

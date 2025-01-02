@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Data inserting Form
+{% endblock title %}
+
+{% block content %}
+    <h2>Add new Student</h2>
+    <form method="post" action="{% url 'datain' %}" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit'>Save</button>
+    </form>
+{% endblock content %}

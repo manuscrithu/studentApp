@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Items
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Search Items</h1>
+
+        <form method="get" action="{% url 'search' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>Results</h2>
+        {% if results %}
+            <ul class="hover-list">
+                {% for item in results %}
+                    <li> NIC: {{ item.nic }} </li>
+                    <li> Name: {{ item.name }} </li>
+                    <li>  Resident: {{ item.resident }} </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+
+{% endblock content %}
