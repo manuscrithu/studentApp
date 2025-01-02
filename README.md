@@ -17,7 +17,8 @@ The **Student App** is a Django-based web application designed to manage student
 
 ```bash```
 git clone https://github.com/yourusername/student-app.git
-2. Set Up a Virtual Environment
+
+### 2. Set Up a Virtual Environment
 Ensure you have Python installed. Then create a virtual environment to manage your project's dependencies:
 
 ```bash```
@@ -25,32 +26,36 @@ cd student-app
 python -m venv .venv
 source .venv/bin/activate  # For Mac/Linux
 .venv\Scripts\activate  # For Windows
-3. Install Dependencies
+
+### 3. Install Dependencies
 Install the required Python packages listed in requirements.txt:
 
 ```bash```
 pip install -r requirements.txt
-4. Configure Database
+
+### 4. Configure Database
 The application uses an SQLite database by default. You can switch to another database system by modifying the DATABASES setting in settings.py.
 
-5. Run Migrations
+### 5. Run Migrations
 Create the necessary database tables:
 
 ```bash```
 python manage.py migrate
-6. Create Superuser (Optional)
+
+### 6. Create Superuser (Optional)
 Create an admin user to access the Django admin interface:
 
 ```bash```
 python manage.py createsuperuser
-7. Run the Development Server
+
+### 7. Run the Development Server
 Start the Django development server:
 
 ```bash```
 python manage.py runserver
 You can now access the app by navigating to http://127.0.0.1:8000/ in your web browser.
 
-URL Structure
+### URL Structure
 Home Page: / - Displays a list of all students.
 Add Student: /add/ - Form to add a new student.
 View Student: /app/<nic>/ - View details of a single student.
